@@ -27,7 +27,7 @@ public class PrchaseServiceimpl implements PurchaseService {
         //      当前时间
         long start = System.currentTimeMillis();
 //        循环尝试直至成功
-        while (true) {
+        for (int i=0;i<3;i++){
             long end = System.currentTimeMillis();
             //如果循环时间大于100ms返回终止循环
             if (end - start > 100) {
