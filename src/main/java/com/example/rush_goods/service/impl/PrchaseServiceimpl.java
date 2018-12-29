@@ -28,8 +28,15 @@ public class PrchaseServiceimpl implements PurchaseService {
 //            库存不足
             return false;
         }
-//      扣减库存
-        productDao.decreaseProduct(productId,quantity);
+//      获取当前版本号
+        int version =product.getVersion();
+//        扣减库存，同时将当前版本号发送给前台进行比较
+        int result=productDao.decreaseProduct(productId,quantity,version);
+//        如果更新数据失败，说明数据在多线程中被其他线程，导致失败返回
+        if (result==0){
+            return false;
+        }
+
 //        初始化购买记录
         PurchaseRecordPo pr=this.initPurchaseRecord(userId,product,quantity);
 //        插入购买信息

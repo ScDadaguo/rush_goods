@@ -28,8 +28,9 @@
 
         <!--使用乐观锁-->
         <update id="decreaseProduct" >
-        update t_product set stock = stock - #{quantity}
-        where id= #{id} and verison=#{version}
+        update t_product set stock = stock - #{quantity},
+        version=version+1
+        where id= #{id} and version=#{version}
         </update>
 
 
