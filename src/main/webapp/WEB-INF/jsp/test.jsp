@@ -14,7 +14,7 @@
     </script>
     <script type="text/javascript">
         console.log("guohao")
-        for (var i=1;i=300;i++){
+        for (var i=1;i<200;i++){
         var  params={
             userId:1,
             productId:1,
@@ -27,7 +27,7 @@
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/purchase",
+            url: "http://localhost:8080/purchaseRedis",
             contentType: "application/json", //必须有
             dataType: "json", //表示返回值类型，不必须
             data: JSON.stringify(params) ,//相当于 //data: "{'str1':'foovalue', 'str2':'barvalue'}",

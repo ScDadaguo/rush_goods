@@ -13,7 +13,7 @@ public interface ProductDao {
 //    减少库存,
     public  int decreaseProduct(@Param("id") Long id,
                                 @Param("quantity") int quantity
-    ,@Param("version") int version);
+    );
 
 
 

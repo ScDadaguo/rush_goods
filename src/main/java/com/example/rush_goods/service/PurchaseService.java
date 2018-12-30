@@ -1,5 +1,9 @@
 package com.example.rush_goods.service;
 
+import com.example.rush_goods.pojo.PurchaseRecordPo;
+
+import java.util.List;
+
 public interface PurchaseService {
     /**
     * @Description: 处理购买业务
@@ -8,7 +12,9 @@ public interface PurchaseService {
     * @Author: 文兆杰
     * @Date: 2018/12/28
     */
-    public boolean purchase(Long userId,Long productId,int quantity);
+
+    public boolean purchaseRedis(Long userId,Long productId,int quantity);
+    public boolean dealRedisPurchase (List<PurchaseRecordPo> prpList);
 
 
 }
